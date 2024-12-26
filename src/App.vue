@@ -1,16 +1,16 @@
 <template>
-  <TaksList />
+  <TaskList />
 </template>
 
 
 <script>
-import TaksList from './components/TaksList.vue';
+import TaskList from './components/TaskList.vue';
 import TaskApi from './components/TaskApi.vue';
 
 export default {
   name: 'App',
   components: {
-    TaksList,
+    TaskList,
     TaskApi
   }
 };

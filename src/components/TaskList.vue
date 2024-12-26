@@ -1,19 +1,22 @@
 <template>
-  <div class="container bg-light pt-3 p-3 mb-2 text-dark border border-secondary rounded w-50">
-    <div class="container mt-5">
-      <h1 class="text-center mb-4">Lista de Tarefas</h1>
+  <div class="container mt-5">
+    <div class="bg-light p-4 text-dark border border-secondary rounded">
+      <h1 class="text-center mb-4">To-Do List</h1>
       <div class="input-group mb-3">
         <input v-model="newTask" type="text" class="form-control me-2" placeholder="Adicionar nova tarefa" />
         <button @click="addTask" class="btn btn-primary">Adicionar</button>
       </div>
       <TaskApi @add-task="addTaskFromApi" />
+      <h2 class="mt-4 mb-3 text-center">Minhas Tarefas</h2>
       <ul class="list-group mt-3">
         <li v-for="(task, index) in tasks" :key="index" :class="['list-group-item', task.completed ? 'list-group-item-success' : '', 'task-item']">
-          <div class="d-flex justify-content-between align-items-center">
-            <span>{{ task.text }}</span>
-            <div>
-              <button @click="toggleTaskCompletion(task)" class="btn btn-success btn-sm me-2">Concluir</button>
-              <button @click="removeTask(index)" class="btn btn-danger btn-sm">Remover</button>
+          <div class="row d-flex align-items-center">
+            <div class="col-lg-8">
+              <span>{{ task.text }}</span>
+            </div>
+            <div class="col-lg-4 d-flex justify-content-end">
+              <button @click="toggleTaskCompletion(task)" class="btn btn-success btn-sm mb-md-0 m-1">Concluir</button>
+              <button @click="removeTask(index)" class="btn btn-danger btn-sm mb-md-0 m-1">Remover</button>
             </div>
           </div>
         </li>
@@ -21,7 +24,6 @@
     </div>
   </div>
 </template>
-
 
 <script>
 import TaskApi from './TaskApi.vue';
@@ -71,3 +73,44 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.container {
+  max-width: 100%;
+  padding: 0 15px;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+.task-item {
+  margin-bottom: 10px; /* Adiciona um padding entre as tarefas */
+}
+
+@media (max-width: 400px) {
+  .d-flex {
+    flex-direction: column;
+  }
+}
+</style>
