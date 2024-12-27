@@ -2,7 +2,7 @@
 
 ### Repository dedicated to a personal project: an easy and interactive system to help organize personal tasks.
 
-![App Demo GIF](./assets/gifTo-do-List.gif) <!-- Replace with the actual path of your GIF -->
+![App Demo GIF](./src/assets/gifTo-do-List.gif) <!-- Replace with the actual path of your GIF -->
 
 ---
 
