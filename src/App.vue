@@ -1,7 +1,6 @@
 <template>
-  <TaskList />
+    <TaskList />
 </template>
-
 
 <script>
 import TaskList from './components/TaskList.vue';
@@ -14,5 +13,10 @@ export default {
     TaskApi
   }
 };
-
 </script>
+
+<style>
+body {
+  background-color: #78909C; 
+}
+</style>

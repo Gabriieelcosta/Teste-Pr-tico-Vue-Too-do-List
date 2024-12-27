@@ -3,7 +3,7 @@
     <select v-model="selectedTask" class="form-select mt-2 me-2">
       <option v-for="task in taskSuggestions" :key="task.id" :value="task">{{ task.title }}</option>
     </select>
-    <button @click="addSelectedTask" class="btn btn-primary mt-2">Sugestão de Tarefas</button>
+    <button id="btn-two" @click="addSelectedTask" class="btn mt-2">Sugestões de Tarefas</button>
   </div>
 </template>
 
@@ -37,3 +37,10 @@ export default {
   }
 };
 </script>
+
+<style>
+#btn-two {
+  background-color: #607D8B;
+  color: white;
+}
+</style>

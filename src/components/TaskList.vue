@@ -1,10 +1,10 @@
 <template>
-  <div class="container mt-5">
+  <div class="container mt-5 ">
     <div class="bg-light p-4 text-dark border border-secondary rounded">
       <h1 class="text-center mb-4">To-Do List</h1>
       <div class="input-group mb-3">
         <input v-model="newTask" type="text" class="form-control me-2" placeholder="Adicionar nova tarefa" />
-        <button @click="addTask" class="btn btn-primary">Adicionar</button>
+        <button id="btn-one" @click="addTask" class="btn ">Adicionar</button>
       </div>
       <TaskApi @add-task="addTaskFromApi" />
       <h2 class="mt-4 mb-3 text-center">Minhas Tarefas</h2>
@@ -15,8 +15,8 @@
               <span>{{ task.text }}</span>
             </div>
             <div class="col-lg-4 d-flex justify-content-end">
-              <button @click="toggleTaskCompletion(task)" class="btn btn-success btn-sm mb-md-0 m-1">Concluir</button>
-              <button @click="removeTask(index)" class="btn btn-danger btn-sm mb-md-0 m-1">Remover</button>
+              <button id="btn-success" @click="toggleTaskCompletion(task)" class="btn btn-sm mb-md-0 m-1">Concluir</button>
+              <button id="btn-remove" @click="removeTask(index)" class="btn  btn-sm mb-md-0 m-1">Remover</button>
             </div>
           </div>
         </li>
@@ -112,5 +112,19 @@ export default {
   .d-flex {
     flex-direction: column;
   }
+}
+
+button{
+  color: white;
+}
+
+#btn-one {
+  background-color: #607D8B;
+}
+#btn-remove {
+  background-color: #683535;
+}
+#btn-success {
+  background-color: #638065;
 }
 </style>
