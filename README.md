@@ -75,3 +75,65 @@ npm install
 
 # Inicie o servidor de desenvolvimento:
 npm run dev
+
+```
+
+---
+
+## 🧪 How to run unit tests | Como rodar os testes unitários
+
+#### 🔵 English:
+
+I chose Vitest for unit testing in my project because of its seamless integration with Vite, providing simple configuration and fast execution. It leverages Vite's speed, making it ideal for projects.
+
+To configure and run unit tests with Vitest in your project, follow these steps:
+
+### Installing Vitest and running it
+
+```bash
+# First, install Vitest and its dependencies in your project. Run the following command in the terminal:
+npm install --save-dev vitest @vitest/ui
+
+# Vite Configuration
+If you already have the basic Vitest configuration in your vite.config.js file, make sure it is configured correctly as shown below:
+
+import { defineConfig } from 'vitest/config';
+import vue from '@vitejs/plugin-vue';
+
+# Running the Tests
+To run the tests, execute the following command in the terminal:
+
+npx vitest
+```
+---
+
+#### 🟢 Português:
+
+Escolhi o Vitest para os testes unitários do meu projeto por sua integração perfeita com o Vite, proporcionando configuração simples e execução rápida. Ele aproveita a velocidade do Vite, tornando-o ideal para projetos. 
+
+Para configurar e executar testes unitários com Vitest no seu projeto, siga os seguintes passos:
+
+### Instalação do Vitest e Colocando para rodar
+
+```bash
+# Primeiro, instale o Vitest e suas dependências no seu projeto. Execute o seguinte comando no terminal:
+npm install --save-dev vitest @vitest/ui
+
+# Configuração do Vite
+Se você já possui a configuração básica do Vitest no seu arquivo vite.config.js. Certifique-se de que ele está configurado corretamente, como mostrado abaixo:
+
+import { defineConfig } from 'vitest/config';
+import vue from '@vitejs/plugin-vue';
+
+# Executando os Testes
+Para rodar os testes, execute o seguinte comando no terminal:
+
+npx vitest
+
+```
+
+![App Demo GIF](./src/assets/gifvitest.gif) <!-- Replace with the actual path of your GIF -->
+
+
+
+
