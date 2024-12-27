@@ -1,7 +1,6 @@
 <template>
   <!-- Grupo de entrada com select e botão -->
   <div class="input-group mb-3">
-    <!-- Select para exibir as sugestões de tarefas -->
     <select v-model="selectedTask" class="form-select mt-2 me-2">
       <!-- Opções do select geradas dinamicamente com base no array de sugestões -->
       <option v-for="task in taskSuggestions" :key="task.id" :value="task">
@@ -58,7 +57,7 @@ export default {
    * Aqui, busca as sugestões de tarefas ao carregar o componente.
    */
   mounted() {
-    
+
     this.fetchTaskSuggestion();
   }
 };

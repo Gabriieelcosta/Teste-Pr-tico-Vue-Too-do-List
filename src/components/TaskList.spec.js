@@ -16,7 +16,7 @@ describe('TaskList.vue', () => {
     const wrapper = mount(TaskList);
 
     // Verifica se o título "Lista de Tarefas" está presente no componente
-    expect(wrapper.find('h1').text()).toBe('Lista de Tarefas');
+    expect(wrapper.find('h1').text()).toBe('To-Do List');
   });
 
   /**
@@ -28,7 +28,7 @@ describe('TaskList.vue', () => {
 
     // Localiza o campo de entrada e o botão de adicionar tarefa
     const input = wrapper.find('input');
-    const button = wrapper.find('button.btn-primary');
+    const button = wrapper.find('button.btn-one');
 
     // Define o valor do campo de entrada como "Nova Tarefa" e dispara o clique no botão
     await input.setValue('Nova Tarefa');
@@ -48,7 +48,7 @@ describe('TaskList.vue', () => {
 
     // Localiza o campo de entrada e o botão de adicionar tarefa
     const input = wrapper.find('input');
-    const button = wrapper.find('button.btn-primary');
+    const button = wrapper.find('button.btn-one');
 
     // Define o valor do campo de entrada como "Nova Tarefa" e dispara o clique no botão
     await input.setValue('Nova Tarefa');

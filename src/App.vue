@@ -20,6 +20,6 @@ export default {
 <style>
 /* Define a cor de fundo do body */
 body {
-  background-color: #78909C !important; /* Cor cinza */
+  background-color: #78909C !important; 
 }
 </style>
