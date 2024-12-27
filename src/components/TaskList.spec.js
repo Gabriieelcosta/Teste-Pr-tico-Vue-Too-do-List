@@ -1,5 +1,5 @@
-import { mount } from '@vue/test-utils'; // Importa a função para montar componentes Vue em um ambiente de teste
-import TaskList from './TaskList.vue'; // Importa o componente TaskList que será testado
+import { mount } from '@vue/test-utils'; 
+import TaskList from './TaskList.vue'; 
 
 // Define o bloco de testes para o componente TaskList.vue
 describe('TaskList.vue', () => {
@@ -35,8 +35,8 @@ describe('TaskList.vue', () => {
     await button.trigger('click');
 
     // Verifica se a tarefa foi adicionada à lista
-    expect(wrapper.findAll('li').length).toBe(1); // Deve haver 1 item na lista
-    expect(wrapper.find('li').text()).toContain('Nova Tarefa'); // O texto do item deve conter "Nova Tarefa"
+    expect(wrapper.findAll('li').length).toBe(1); 
+    expect(wrapper.find('li').text()).toContain('Nova Tarefa'); 
   });
 
   /**
@@ -55,8 +55,8 @@ describe('TaskList.vue', () => {
     await button.trigger('click');
 
     // Recupera os dados armazenados no localStorage e verifica se foram atualizados corretamente
-    const tasks = JSON.parse(localStorage.getItem('tasks')); // Recupera a lista de tarefas do localStorage
-    expect(tasks.length).toBe(1); // Deve haver 1 tarefa no localStorage
-    expect(tasks[0].text).toBe('Nova Tarefa'); // O texto da tarefa deve ser "Nova Tarefa"
+    const tasks = JSON.parse(localStorage.getItem('tasks')); 
+    expect(tasks.length).toBe(1); 
+    expect(tasks[0].text).toBe('Nova Tarefa'); 
   });
 });

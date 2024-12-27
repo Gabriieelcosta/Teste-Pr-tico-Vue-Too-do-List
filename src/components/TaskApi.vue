@@ -8,7 +8,9 @@
       </option>
     </select>
     <!-- Botão para adicionar a tarefa selecionada -->
-    <button @click="addSelectedTask" class="btn mt-2 btn-two">Sugestões de Tarefas</button>
+    <button @click="addSelectedTask" class="btn mt-2 btn-two">
+      Sugestões de Tarefas
+    </button>
   </div>
 </template>
 
@@ -18,7 +20,7 @@ export default {
   data() {
     return {
       taskSuggestions: [], // Armazena as sugestões de tarefas retornadas pela API
-      selectedTask: null   // Armazena a tarefa selecionada no select
+      selectedTask: null, // Armazena a tarefa selecionada no select
     };
   },
   methods: {
@@ -29,13 +31,15 @@ export default {
     async fetchTaskSuggestion() {
       try {
         // Faz a requisição para a API
-        const response = await fetch('https://jsonplaceholder.typicode.com/todos');
+        const response = await fetch(
+          "https://jsonplaceholder.typicode.com/todos"
+        );
         const data = await response.json();
         // Filtra apenas as tarefas não concluídas
-        this.taskSuggestions = data.filter(task => !task.completed);
+        this.taskSuggestions = data.filter((task) => !task.completed);
       } catch (error) {
         // Loga o erro caso a requisição falhe
-        console.error('Erro ao buscar sugestões de tarefas:', error);
+        console.error("Erro ao buscar sugestões de tarefas:", error);
       }
     },
     /**
@@ -45,11 +49,14 @@ export default {
     addSelectedTask() {
       if (this.selectedTask) {
         // Emite o evento 'add-task' com os dados da tarefa selecionada
-        this.$emit('add-task', { text: this.selectedTask.title, completed: false });
+        this.$emit("add-task", {
+          text: this.selectedTask.title,
+          completed: false,
+        });
         // Reseta a seleção após o envio
         this.selectedTask = null;
       }
-    }
+    },
   },
   /**
    * Hook de ciclo de vida do Vue.
@@ -57,22 +64,21 @@ export default {
    * Aqui, busca as sugestões de tarefas ao carregar o componente.
    */
   mounted() {
-
     this.fetchTaskSuggestion();
-  }
+  },
 };
 </script>
 
 <style>
 /* Estilo personalizado para o botão */
-button{
+button {
   color: white !important;
 }
 
 .btn-two {
-  background-color: #607D8B !important;
+  background-color: #607d8b !important;
 }
 .btn-two:hover {
-  background-color: #48616d !important; 
+  background-color: #48616d !important;
 }
 </style>
