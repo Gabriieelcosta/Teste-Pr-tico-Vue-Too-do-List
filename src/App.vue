@@ -1,8 +1,10 @@
 <template>
-    <TaskList />
+  <!-- Renderiza o componente TaskList -->
+  <TaskList />
 </template>
 
 <script>
+// Importa os componentes TaskList e TaskApi
 import TaskList from './components/TaskList.vue';
 import TaskApi from './components/TaskApi.vue';
 
@@ -16,7 +18,8 @@ export default {
 </script>
 
 <style>
+/* Define a cor de fundo do body */
 body {
-  background-color: #78909C; 
+  background-color: #78909C !important; /* Cor cinza */
 }
 </style>
